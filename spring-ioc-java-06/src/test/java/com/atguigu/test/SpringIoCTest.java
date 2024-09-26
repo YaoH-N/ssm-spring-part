@@ -1,6 +1,8 @@
 package com.atguigu.test;
 
 import com.atguigu.config.JavaConfiguration;
+import com.atguigu.config.JavaConfigurationA;
+import com.atguigu.config.JavaConfigurationB;
 import com.atguigu.ioc_01.StudentController;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -28,6 +30,12 @@ public class SpringIoCTest {
 
         System.out.println("bean = " + bean  );
         System.out.println("bean1 = " + bean1  );
+    }
+
+    @Test
+    public void test_04(){
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(JavaConfigurationA.class, JavaConfigurationB.class);
+        AnnotationConfigApplicationContext applicationContext1 = new AnnotationConfigApplicationContext(JavaConfigurationA.class);
 
     }
 }
